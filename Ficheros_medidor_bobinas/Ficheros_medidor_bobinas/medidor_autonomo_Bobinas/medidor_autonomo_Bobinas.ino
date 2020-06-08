@@ -6,8 +6,6 @@ double pulso, frecuencia, capacidad, valor, inductancia;              // Variabl
 int numeroLecturas = 500;
 const int pulsoOut = 20;
 const int pulsoIn = 21;
-int buzzer = 8;
-int flag = 0;
 
 void setup()
 {
@@ -31,11 +29,6 @@ void loop()
 
   if (valor > 1000)
   {
-    if (flag == 0)
-    {
-      tone(buzzer, 1000 , 250);
-      flag = 1;
-    }
     valor = valor / 1000;
     lcd.setCursor(7, 0);
     lcd.print (valor);
